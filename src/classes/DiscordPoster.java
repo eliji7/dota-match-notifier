@@ -7,14 +7,17 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class DiscordPoster {
+	
+	private static String message = "Ready up, my guy!";
+	private static final String DISCORD_WEBHOOK = "https://discord.com/api/webhooks/851852923902492752/Q_voNGYe0RVFBnb2o4LKJm5KYHnbWaWY6fPE3G5_DUVdWRNm0IyZ1hdUNEnKtWAVH9IL";
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void postMessage() throws IOException, InterruptedException {
 
-        String requestBody = "{ \"content\" : \"test\"}";
+        String requestBody = "{ \"content\" : \"" + message + "\"}";
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://discord.com/api/webhooks/851852923902492752/Q_voNGYe0RVFBnb2o4LKJm5KYHnbWaWY6fPE3G5_DUVdWRNm0IyZ1hdUNEnKtWAVH9IL"))
+                .uri(URI.create(DISCORD_WEBHOOK))
                 .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                 .header("Content-Type", "application/json")
                 .build();
