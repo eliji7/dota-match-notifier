@@ -9,7 +9,7 @@ import java.net.http.HttpResponse;
 public class DiscordPoster {
 	
 	private static String message = "Ready up, my guy!";
-	private static final String DISCORD_WEBHOOK = "https://discord.com/api/webhooks/851852923902492752/Q_voNGYe0RVFBnb2o4LKJm5KYHnbWaWY6fPE3G5_DUVdWRNm0IyZ1hdUNEnKtWAVH9IL";
+	private static final String DISCORD_WEBHOOK = "REPLACE WITH WEBHOOK HERE";
 
     public static void postMessage() throws IOException, InterruptedException {
 
