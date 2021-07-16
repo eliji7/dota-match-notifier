@@ -7,7 +7,7 @@ public class DotaMatchNotifier {
           while (true) {
         	  
                String currentTitle = ForegroundWinTool.getActiveWindowTitle();
-               if (currentTitle.equals("Dota 2")) {
+               if (!currentTitle.equals("Dota 2")) {
                     System.out.println("Match Found!");
                     DiscordPoster.postMessage();
                     break;

@@ -6,11 +6,17 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.JDABuilder;
+
+
 public class DiscordPoster {
 	
 	private static String message = "Ready up, my guy!";
-	private static final String DISCORD_WEBHOOK = "REPLACE WITH WEBHOOK HERE";
+	private static final String DISCORD_WEBHOOK = "https://discord.com/api/webhooks/851852923902492752/Q_voNGYe0RVFBnb2o4LKJm5KYHnbWaWY6fPE3G5_DUVdWRNm0IyZ1hdUNEnKtWAVH9IL";
+	private JDA jda = JDABuilder.createDefault("token").build();
 
+	
     public static void postMessage() throws IOException, InterruptedException {
 
         String requestBody = "{ \"content\" : \"" + message + "\"}";
@@ -26,5 +32,10 @@ public class DiscordPoster {
                 HttpResponse.BodyHandlers.ofString());
 
         System.out.println(response.body());
+    }
+    
+    public static void detectEmote() {
+    	
+    	
     }
 }
